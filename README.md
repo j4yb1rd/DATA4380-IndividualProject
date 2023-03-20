@@ -10,7 +10,7 @@
 * The task is to use several patients’ rs-fMRIs, convert them individually into time series of 48 features using the Harvard-Oxford Cortical Structural Atlas, and train a convolutional neural network to produce a regression result; namely, this result will be a probability of whether each individual patient has Autism Spectrum Disorder (ASD).  
 * Summary of the performance achieved: TBD 
 
-## Motivation and Background
+### Motivation and Background
 
 * I was assigned this project as part of my undergraduate and graduate research under Dr. Pedro Maia at UTA. It sounded like an interesting project to work on, especially since I also have ASD. 
 
@@ -18,10 +18,7 @@
   * [Identification of autism spectrum disorder using deep learning and the ABIDE dataset - PubMed](https://pubmed.ncbi.nlm.nih.gov/29034163/)
   * [Disease prediction using graph convolutional networks: Application to Autism Spectrum Disorder and Alzheimer’s disease - ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S1361841518303554)
   * [Enhancing studies of the connectome in autism using the autism brain imaging data exchange II | Scientific Data](https://www.nature.com/articles/sdata201710)
-
-Is this a new problem? Previous work you are reproducing or extending? Is there existing code? What language/libraries have been used? 
-
-It appears to be a previous work that I plan on extending using several different models. 
+* This appears to be a previous work that I plan on extending using several different models. 
 ## Summary of Workdone
 
 Include only the sections that are relevant an appropriate.
