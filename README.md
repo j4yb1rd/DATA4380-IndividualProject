@@ -1,6 +1,6 @@
 ![](UTA-DataScience-Logo.png)
 
-# Autism Diagnostic CNNs
+# Diagnosing Autism using CNNs over the ABIDE database
 
 **One Sentence Summary**
 * This repository outlines the construction of a convolutional neural network used to classify patients with autism using functional MRIs gathered at rest (rs-fMRIs); patient data will be gathered from the ABIDE dataset. 
@@ -26,19 +26,18 @@ Include only the sections that are relevant an appropriate.
 ### Data
 
 * Data:
-  * Type: For example
-    * Input: medical images (1000x1000 pixel jpegs), CSV file: image filename -> diagnosis
-    * Input: CSV file of features, output: signal/background flag in 1st column.
-  * Size: How much data?
+  * Type: NII or NII.GZ files
+    * Input: time series for individual brain regions, as outlined in the Preprocessing / Clean-up section
+  * Size: ~100 GB, although it is ~100 MB per file
   * Instances (Train, Test, Validation Split): how many data points? Ex: 1000 patients for training, 200 for testing, none for validation
 
 #### Preprocessing / Clean up
 
-* Describe any manipulations you performed to the data.
+* In order to fully process the data, I had to run it through a masker, which is the name Nilearn gives to its class of objects that can transform raw Nifti objects into Numpy arrays.
 
 #### Data Visualization
 
-Show a few visualization of the data and say a few words about what you see.
+TBD
 
 ### Problem Formulation
 
