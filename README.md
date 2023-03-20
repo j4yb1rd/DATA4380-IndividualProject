@@ -19,17 +19,17 @@
   * [Disease prediction using graph convolutional networks: Application to Autism Spectrum Disorder and Alzheimer’s disease - ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S1361841518303554)
   * [Enhancing studies of the connectome in autism using the autism brain imaging data exchange II | Scientific Data](https://www.nature.com/articles/sdata201710)
 * This appears to be a previous work that I plan on extending using several different models. 
-## Summary of Workdone
 
-Include only the sections that are relevant an appropriate.
+## Summary of Work Done
 
 ### Data
 
-* Data:
-  * Type: NII or NII.GZ files
-    * Input: time series for individual brain regions, as outlined in the Preprocessing / Clean-up section
-  * Size: ~100 GB, although it is ~100 MB per file
-  * Instances (Train, Test, Validation Split): how many data points? Ex: 1000 patients for training, 200 for testing, none for validation
+
+* Source: downloaded through Nilearn, also available through [this link](http://fcon_1000.projects.nitrc.org/indi/abide/abide_II.html) via the Neuroimaging Informatics Tools and Resources Clearinghouse ([NITRC](http://nitrc.org)).
+* Type: NII or NII.GZ files
+  * Input: time series for individual brain regions, as outlined in the Preprocessing / Clean-up section
+* Size: ~100 GB, although it is ~100 MB per file
+* Instances (Train, Test, Validation Split): how many data points? Ex: 1000 patients for training, 200 for testing, none for validation
 
 #### Preprocessing / Clean up
 
@@ -41,20 +41,18 @@ TBD
 
 ### Problem Formulation
 
-* Define:
-  * Input / Output
-  * Models
-    * Describe the different models you tried and why.
-  * Loss, Optimizer, other Hyperparameters.
+* Input: time series gathered from masker, as detailed in preprocessing
+* Models (Will try)
+    * Running a DNN through PyTorch. This allows for easier GPU usage.
+* The loss function will just be accuracy, considering that this is just a binary classification; precision, recall, and F1 will also be considered.
 
 ### Training
 
-* Describe the training:
-  * How you trained: software and hardware.
-  * How did training take.
-  * Training curves (loss vs epoch for test/train).
-  * How did you decide to stop training.
-  * Any difficulties? How did you resolve them?
+* I used Google Colab to load the data, code the model, and save the model for further use.
+* How did training take.
+* Training curves (loss vs epoch for test/train).
+* How did you decide to stop training.
+* Any difficulties? How did you resolve them?
 
 ### Performance Comparison
 
@@ -81,25 +79,15 @@ TBD
 
 ### Overview of files in repository
 
-* Describe the directory structure, if any.
-* List all relavent files and describe their role in the package.
-* An example:
-  * utils.py: various functions that are used in cleaning and visualizing data.
-  * preprocess.ipynb: Takes input data in CSV and writes out data frame after cleanup.
-  * visualization.ipynb: Creates various visualizations of the data.
-  * models.py: Contains functions that build the various models.
-  * training-model-1.ipynb: Trains the first model and saves model during training.
-  * training-model-2.ipynb: Trains the second model and saves model during training.
-  * training-model-3.ipynb: Trains the third model and saves model during training.
-  * performance.ipynb: loads multiple trained models and compares results.
-  * inference.ipynb: loads a trained model and applies it to test data to create kaggle submission.
+* [Nilearn_fMRI.ipynb](https://github.com/j4yb1rd/DATA4380-IndividualProject/blob/main/Nilearn_fMRI.ipynb): The current notebook I am working in.
+* More notebooks and files will be added as more progress is made.
 
 * Note that all of these notebooks should contain enough text for someone to understand what is happening.
 
 ### Software Setup
-* List all of the required packages.
-* If not standard, provide or point to instruction for installing the packages.
-* Describe how to install your package.
+* One of the prominent packages involved in this project is Nilearn, a package of Python that specailizes in providing statistical methods to analyze brain volumes and scans.
+* These packages may be installed via `pip` or `pip3` in your local Python terminal or within a Jupyter notebook.
+  * Running the commands `!pip install nilearn` and `!pip install torch` will install these easily within your notebook. 
 
 ### Data
 
