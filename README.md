@@ -39,7 +39,7 @@
 
 ![](NYU_0051002_OFC_standardFALSE.png)
 
-The activity in the orbitofrontal cortex of one particular patient.
+The activity in the orbitofrontal cortex of one patient. The x-axis is the number of each individual time step, and the y-axis represents the unnormalized blood flow in that brain region.
 
 ### Problem Formulation
 
