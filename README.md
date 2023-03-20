@@ -37,7 +37,9 @@
 
 #### Data Visualization
 
-TBD
+![](NYU_0051002_OFC_standardFALSE.png)
+
+The activity in the orbitofrontal cortex of one particular patient.
 
 ### Problem Formulation
 
