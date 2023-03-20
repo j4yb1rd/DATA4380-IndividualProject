@@ -1,13 +1,13 @@
 ![](UTA-DataScience-Logo.png)
 
-# Diagnosing Autism using CNNs over the ABIDE database
+# Diagnosing Autism using individual brain regions from rs-fMRIs
 
 **One Sentence Summary**
-* This repository outlines the construction of a convolutional neural network used to classify patients with autism using functional MRIs gathered at rest (rs-fMRIs); patient data will be gathered from the ABIDE dataset. 
+* This repository outlines the construction of a deep linear neural network used to classify patients with autism using regional brain activity from functional MRIs gathered at rest (rs-fMRIs); patient data will be gathered from the ABIDE dataset. 
 
 ## Overview
 
-* The task is to use several patients’ rs-fMRIs, convert them individually into time series of 48 features using the Harvard-Oxford Cortical Structural Atlas, and train a convolutional neural network to produce a regression result; namely, this result will be a probability of whether each individual patient has Autism Spectrum Disorder (ASD).  
+* The task is to use several patients’ rs-fMRIs, convert them individually into time series of 48 features using the Harvard-Oxford Cortical Structural Atlas, and train deep linear neural networks for several pertinent regions to produce a regression result; namely, these results will be a probability of whether each individual patient has Autism Spectrum Disorder (ASD).  
 * Summary of the performance achieved: TBD 
 
 ### Motivation and Background
