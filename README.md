@@ -25,7 +25,6 @@
 
 ### Data
 
-
 * Source: downloaded through Nilearn, also available through [this link](http://fcon_1000.projects.nitrc.org/indi/abide/abide_II.html) via the Neuroimaging Informatics Tools and Resources Clearinghouse ([NITRC](http://nitrc.org)).
 * Type: NII or NII.GZ files
   * Input: time series for individual brain regions, as outlined in the Preprocessing / Clean-up section
@@ -39,9 +38,13 @@
 
 #### Data Visualization
 
-![](NYU_0051002_OFC_standardFALSE.png)
+![](Discover2023/pictures/linegraph.png)
 
 The activity in the orbitofrontal cortex of one patient. The x-axis is the number of each individual time step, and the y-axis represents the unnormalized blood flow in that brain region.
+
+![](Discover2023/pictures/braincut.png)
+
+Three cross-sections of one slice of an rs-fMRI. Views for y = -44, x = 0, and z = -2.
 
 ### Problem Formulation
 
@@ -59,6 +62,8 @@ The activity in the orbitofrontal cortex of one patient. The x-axis is the numbe
   * Activation: ReLU
 
 ### Conclusions
+
+![](Discover2023/pictures/accuracy.png)
 
 * Results from 1000 simulations of the classifier model showed a normal distribution around 50% accuracy, with a maximum accuracy of 81.25%.
 * Precision and recall each showed similar results, with a maximum of 100% during many runs.
@@ -97,19 +102,12 @@ The activity in the orbitofrontal cortex of one patient. The x-axis is the numbe
 * Data can be downloaded through a [website](http://fcon_1000.projects.nitrc.org/indi/abide/abide_II.html) or through the function [`nilearn.datasets.fetch_abide_pcp()`](https://nilearn.github.io/stable/modules/generated/nilearn.datasets.fetch_abide_pcp.html)`
 * Preprocessing and use of the masker can be done by copying the functions within the notebook, specifically [`nilearn.datasets.fetch_atlas_harvard_oxford()`](https://nilearn.github.io/stable/modules/generated/nilearn.datasets.fetch_atlas_harvard_oxford) with your choice of atlas style as described in the documentation.
 
-### Training
-
-* Describe how to train the model
-
-#### Performance Evaluation
-
-* Describe how to run the performance evaluation.
-
-
 ## Citations
 
-* Provide any references.
-
+  * [Identification of autism spectrum disorder using deep learning and the ABIDE dataset - PubMed](https://pubmed.ncbi.nlm.nih.gov/29034163/)
+  * [Disease prediction using graph convolutional networks: Application to Autism Spectrum Disorder and Alzheimer’s disease - ScienceDirect](https://www.sciencedirect.com/science/article/abs/pii/S1361841518303554)
+  * [Enhancing studies of the connectome in autism using the autism brain imaging data exchange II | Scientific Data](https://www.nature.com/articles/sdata201710)
+  * [ABIDE Dataset](http://fcon_1000.projects.nitrc.org/indi/abide/)
 
 
 
