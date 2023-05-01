@@ -81,9 +81,11 @@ The activity in the orbitofrontal cortex of one patient. The x-axis is the numbe
 ### Overview of files in repository
 
 * [Nilearn_fMRI.ipynb](https://github.com/j4yb1rd/DATA4380-IndividualProject/blob/main/Nilearn_fMRI.ipynb): The current notebook I am working in.
-* More notebooks and files will be added as more progress is made.
-
-* Note that all of these notebooks should contain enough text for someone to understand what is happening.
+* [TS_NYU](https://github.com/j4yb1rd/DATA4380-IndividualProject/tree/main/TS_NYU): The folder containing 80 CSVs of pre-processed patient data.
+* [Discover2023](https://github.com/j4yb1rd/DATA4380-IndividualProject/tree/main/Discover2023): The folder containing how the project was presented at a symposium.
+* [NYU_0051002_OFC_standardFALSE.png](https://github.com/j4yb1rd/DATA4380-IndividualProject/blob/main/NYU_0051002_OFC_standardFALSE.png): An example of the change from mean blood flow plotted against time step iteration.
+* [README.md](https://github.com/j4yb1rd/DATA4380-IndividualProject/blob/main/README.md): **YOU ARE HERE**
+* [UTA-DataScience-Logo.png](https://github.com/j4yb1rd/DATA4380-IndividualProject/blob/main/UTA-DataScience-Logo.png): Link to the logo displayed at the top.
 
 ### Software Setup
 * One of the prominent packages involved in this project is Nilearn, a package of Python that specailizes in providing statistical methods to analyze brain volumes and scans.
@@ -92,8 +94,8 @@ The activity in the orbitofrontal cortex of one patient. The x-axis is the numbe
 
 ### Data
 
-* Point to where they can download the data.
-* Lead them through preprocessing steps, if necessary.
+* Data can be downloaded through a [website](http://fcon_1000.projects.nitrc.org/indi/abide/abide_II.html) or through the function [`nilearn.datasets.fetch_abide_pcp()`](https://nilearn.github.io/stable/modules/generated/nilearn.datasets.fetch_abide_pcp.html)`
+* Preprocessing and use of the masker can be done by copying the functions within the notebook, specifically [`nilearn.datasets.fetch_atlas_harvard_oxford()`](https://nilearn.github.io/stable/modules/generated/nilearn.datasets.fetch_atlas_harvard_oxford) with your choice of atlas style as described in the documentation.
 
 ### Training
 
