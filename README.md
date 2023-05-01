@@ -7,8 +7,9 @@
 
 ## Overview
 
-* The task is to use several patients’ rs-fMRIs, convert them individually into time series of 48 features using the Harvard-Oxford Cortical Structural Atlas, and train deep linear neural networks for several pertinent regions to produce a regression result; namely, these results will be a probability of whether each individual patient has Autism Spectrum Disorder (ASD).  
-* Summary of the performance achieved: TBD 
+* The task was to use several patients’ rs-fMRIs, convert them individually into time series of 48 features using the Harvard-Oxford Cortical Structural Atlas, and train deep linear neural networks for several pertinent regions to produce a regression result; namely, these results would be a probability of whether each individual patient has Autism Spectrum Disorder (ASD).  
+* Only the orbitofronal cortex was considered for a small selection of 80 patients from NYU.
+* Summary of the performance achieved:  Results from training a model on the OFC time series indicate an accuracy of up to 81%, but through many simulations appear no better than random.
 
 ### Motivation and Background
 
@@ -29,11 +30,12 @@
 * Type: NII or NII.GZ files
   * Input: time series for individual brain regions, as outlined in the Preprocessing / Clean-up section
 * Size: ~100 GB, although it is ~100 MB per file
-* Instances (Train, Test, Validation Split): how many data points? Ex: 1000 patients for training, 200 for testing, none for validation
+* Instances: 80 patients through NYU; 64 used for training , 16 for testing
+  * Selection size of about 8 GB
 
 #### Preprocessing / Clean up
 
-* In order to fully process the data, I had to run it through a masker, which is the name Nilearn gives to its class of objects that can transform raw Nifti objects into Numpy arrays.
+* In order to fully process the data, I had to run it through a masker, which is the name Nilearn gives to its class of objects that can transform raw Nifti objects into Numpy arrays. Then, I stored these 2D Numpy arrays as CSVs so that they could be called later.
 
 #### Data Visualization
 
@@ -44,32 +46,29 @@ The activity in the orbitofrontal cortex of one patient. The x-axis is the numbe
 ### Problem Formulation
 
 * Input: time series gathered from masker, as detailed in preprocessing
-* Models (Will try)
-    * Running a DNN through PyTorch. This allows for easier GPU usage.
-* The loss function will just be accuracy, considering that this is just a binary classification; precision, recall, and F1 will also be considered.
+* Models:
+    * Running a DNN through sklearn.
+* The metric was accuracy, considering that this is just a binary classification; precision and recall were also to be considered.
 
 ### Training
 
 * I used Google Colab to load the data, code the model, and save the model for further use.
-* How did training take.
-* Training curves (loss vs epoch for test/train).
-* How did you decide to stop training.
-* Any difficulties? How did you resolve them?
-
-### Performance Comparison
-
-* Clearly define the key performance metric(s).
-* Show/compare results in one table.
-* Show one (or few) visualization(s) of results, for example ROC curves.
+* I trained 1000 simulations of one MLP model.
+  * Hidden Layers: (30,15,5,)
+  * Solver: Stochastic Gradient Descent
+  * Activation: ReLU
 
 ### Conclusions
 
-* State any conclusions you can infer from your work. Example: LSTM work better than GRU.
+* Results from 1000 simulations of the classifier model showed a normal distribution around 50% accuracy, with a maximum accuracy of 81.25%.
+* Precision and recall each showed similar results, with a maximum of 100% during many runs.
+* The study was limited by a small sample size due to hardware limitations, and any sample size larger than 100 needs at least 32 GB of RAM to run, especially during the smoothing process.
+* The dataset takes up over 100 GB of disk space storage, but using 80 patients took up only 8 GB that was able to be loaded into Google Colab, the working environment in which this study was done.
 
 ### Future Work
 
-* What would be the next thing that you would try.
-* What are some other studies that can be done starting from here.
+* Patients in this study were from only one center, and using patients from multiple brain scan centers as provided in the dataset may contribute to a higher accuracy.
+* The utilization of the subcortical atlas could explore regions further embedded in the brain, such as the amygdala, which may contribute to a more successful model.
 
 ## How to reproduce results
 
@@ -89,7 +88,7 @@ The activity in the orbitofrontal cortex of one patient. The x-axis is the numbe
 ### Software Setup
 * One of the prominent packages involved in this project is Nilearn, a package of Python that specailizes in providing statistical methods to analyze brain volumes and scans.
 * These packages may be installed via `pip` or `pip3` in your local Python terminal or within a Jupyter notebook.
-  * Running the commands `!pip install nilearn` and `!pip install torch` will install these easily within your notebook. 
+  * Running the command `!pip install nilearn` within your notebook will install these easily within your notebook. 
 
 ### Data
 
